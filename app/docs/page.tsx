@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Section } from "../../src/components/site/Section";
 import { links } from "../../src/config/links";
 
@@ -7,8 +6,23 @@ export const metadata = {
   description: "Public documents (PDF) and quick links for verification/audit and test strategy.",
 };
 
-const DocRow = ({ id, title, href, note }: { id: string; title: string; href: string; note?: string }) => (
-  <div id={id} className="scroll-mt-28 rounded-3xl border border-black/10 bg-white p-6 shadow-[0_1px_0_rgba(0,0,0,0.04)]">
+const DocRow = ({
+  id,
+  title,
+  href,
+  note,
+  cta = "Open PDF",
+}: {
+  id: string;
+  title: string;
+  href: string;
+  note?: string;
+  cta?: string;
+}) => (
+  <div
+    id={id}
+    className="scroll-mt-28 rounded-3xl border border-black/10 bg-white p-6 shadow-[0_1px_0_rgba(0,0,0,0.04)]"
+  >
     <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
       <div>
         <h2 className="text-lg font-semibold tracking-tight text-black">{title}</h2>
@@ -18,7 +32,7 @@ const DocRow = ({ id, title, href, note }: { id: string; title: string; href: st
         href={href}
         className="inline-flex items-center justify-center rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-medium text-black shadow-[0_1px_0_rgba(0,0,0,0.04)] hover:bg-black/5"
       >
-        Open PDF
+        {cta}
       </a>
     </div>
   </div>
@@ -52,7 +66,13 @@ export default function DocsPage() {
             <DocRow id="governance" title="Governance Framework v1.0" href={links.docs.governance} note="Roles, change control, decision records, compliance posture." />
             <DocRow id="security-model" title="Security Model v1.0" href={links.docs.securityModel} note="Threat surfaces, integrity, tamper evidence, artifact handling." />
             <DocRow id="verify-audit-spec" title="Audit Verification Framework v1.0" href={links.docs.auditFramework} note="Verification loop and expected evidence outputs." />
-            <DocRow id="test-strategy" title="Test Strategy v1.0" href={links.artifacts.testStrategy ?? links.docs.conformance} note="Deterministic replay tests, golden vectors, compliance checks." />
+            <DocRow
+              id="test-strategy"
+              title="Test Strategy v1.0"
+              href={links.artifacts.testStrategy}
+              note="Deterministic replay tests, golden vectors, compliance checks."
+              cta="Open on GitHub"
+            />
             <DocRow id="threat-model" title="Threat Model v1.0" href={links.docs.threatModel} note="Adversary model, misuse cases, mitigations." />
             <DocRow id="deployment" title="Deployment Operational Guidelines v1.0" href={links.docs.deploymentGuidelines} note="Production assumptions, observability, change safety." />
             <DocRow id="determinism" title="Determinism Formal Definition v1.0" href={links.docs.determinismFormal} note="Formal notes on deterministic reconstruction and hashing." />

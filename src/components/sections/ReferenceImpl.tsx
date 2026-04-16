@@ -38,19 +38,22 @@ export function ReferenceImpl() {
             <div className="text-sm text-black/50">Artifacts</div>
             <div className="mt-4 flex flex-col gap-2 text-sm">
               <SmartLink
-                href={links.docsPage}
+                href={links.docs.specification}
+                external
                 className="text-black/70 hover:text-black transition underline underline-offset-4 decoration-black/20"
               >
                 Core Specification v1.0 (PDF)
               </SmartLink>
               <SmartLink
-                href={links.docsPage}
+                href={links.docs.determinismFormal}
+                external
                 className="text-black/70 hover:text-black transition underline underline-offset-4 decoration-black/20"
               >
                 Determinism — Formal Definition v1.0 (PDF)
               </SmartLink>
               <SmartLink
-                href={links.docsPage}
+                href={links.docs.conformance}
+                external
                 className="text-black/70 hover:text-black transition underline underline-offset-4 decoration-black/20"
               >
                 Conformance Requirements v1.0 (PDF)
@@ -70,7 +73,7 @@ export function ReferenceImpl() {
               GitHub — Core
             </SmartLink>
             <SmartLink href={links.githubReference} external className="text-black/70 hover:text-black transition">
-              GitHub — Reference
+              GitHub — Public Standard Site
             </SmartLink>
           </div>
         </div>
