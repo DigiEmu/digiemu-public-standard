@@ -8,6 +8,8 @@ export const links = {
 
   // repos
   githubCore: "https://github.com/DigiEmu/core",
+  githubReference: "https://github.com/DigiEmu/digiemu-public-standard",
+
 
   // docs landing page
   docsPage: "/docs",
