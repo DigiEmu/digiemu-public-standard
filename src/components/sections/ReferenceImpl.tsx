@@ -61,12 +61,12 @@ export function ReferenceImpl() {
             </div>
 
             <div className="mt-5 text-xs text-black/50">
-              Additional governance and audit documents are available under the Reference page.
+              Additional governance and audit documents are available under the Docs and Reference pages.
             </div>
           </Card>
         </div>
 
-        <div className={`${ui.card.base} ${ui.card.pad}`}>
+        <div className={`${ui.card.base} ${ui.card.pad} mt-4`}>
           <div className="text-sm text-black/50">Repositories</div>
           <div className="mt-3 flex flex-wrap gap-3 text-sm">
             <SmartLink href={links.githubCore} external className="text-black/70 hover:text-black transition">

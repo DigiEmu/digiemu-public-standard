@@ -15,27 +15,21 @@ export const links = {
 
   // local downloadable docs
   docs: {
-    specification: "/docs/DigiEmu_Core_Specification_v1_0_ENTERPRISE.pdf",
-    governance: "/docs/DigiEmu_Core_Governance_Framework_v1_0_ENTERPRISE.pdf",
-    securityModel: "/docs/DigiEmu_Core_Security_Model_v1_0_ENTERPRISE.pdf",
-    auditFramework:
-      "/docs/DigiEmu_Core_Audit_Verification_Framework_v1_0_ENTERPRISE.pdf",
-    threatModel: "/docs/DigiEmu_Core_Threat_Model_v1_0_ENTERPRISE.pdf",
-    certification:
-      "/docs/DigiEmu_Core_Certification_Technical_Requirements_v1_0_ENTERPRISE.pdf",
-    deploymentGuidelines:
-      "/docs/DigiEmu_Core_Deployment_Operational_Guidelines_v1_0_ENTERPRISE.pdf",
-    determinismFormal:
-      "/docs/DigiEmu_Core_Determinism_Formal_Definition_v1_0_ENTERPRISE.pdf",
-    conformance:
-      "/docs/DigiEmu_Core_Conformance_Requirements_v1_0_ENTERPRISE.pdf",
-  },
-
+  specification: "/docs/DigiEmu_Core_Specification_v1_0_ENTERPRISE.pdf",
+  governance: "/docs/DigiEmu_Core_Governance_Framework_v1_0_ENTERPRISE.pdf",
+  securityModel: "/docs/DigiEmu_Core_Security_Model_v1_0_ENTERPRISE.pdf",
+  auditFramework: "/docs/DigiEmu_Core_Audit_Verification_Framework_v1_0_ENTERPRISE.pdf",
+  threatModel: "/docs/DigiEmu_Core_Threat_Model_v1_0_ENTERPRISE.pdf",
+  certification: "/docs/DigiEmu_Core_Certification_Technical_Requirements_v1_0_ENTERPRISE.pdf",
+  deploymentGuidelines: "/docs/DigiEmu_Core_Deployment_Operational_Guidelines_v1_0_ENTERPRISE.pdf",
+  determinismFormal: "/docs/DigiEmu_Core_Determinism_Formal_Definition_v1_0_ENTERPRISE.pdf",
+  conformance: "/docs/DigiEmu_Core_Conformance_Requirements_v1_0_ENTERPRISE.pdf",
+},
   // demo artifacts served by the website itself
   demo: {
-    bundle: "/demo/demo_bundle_v1.json",
-    verifyResult: "/demo/verify_result_v1.json",
-  },
+  bundle: "/demo/demo_bundle_v1.json",
+  verifyResult: "/demo/verify_result_v1.json",
+},
 
   // footer / artifact shortcuts
   artifacts: {

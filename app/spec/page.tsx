@@ -241,7 +241,7 @@ export default function SpecPage() {
           <h2 className="text-xl font-semibold tracking-tight text-black">Release Anchors</h2>
           <p className="mt-2 max-w-3xl text-sm text-black/70">
             The v1.0 release line is defined by a normative baseline tag and a signed patch line.
-            This page mirrors the cryptographic release line as published in the reference repository.
+            This page mirrors the cryptographic release line as published in the core repository.
           </p>
 
           <div className="mt-4 rounded-2xl border border-black/10 bg-white p-5">
@@ -277,7 +277,7 @@ export default function SpecPage() {
           <h2 className="text-xl font-semibold tracking-tight text-black">Cryptographic Integrity</h2>
           <p className="mt-2 max-w-3xl text-sm text-black/70">
             All release tags in the v1.0 line are signed. Independent verification is performed with Git tag signature
-            checks against the published public key.
+            checks against the published public key material.
           </p>
 
           <div className="mt-4 rounded-2xl border border-black/10 bg-white p-5">
@@ -306,7 +306,7 @@ export default function SpecPage() {
 git tag -v ${links.releaseLine.patches[links.releaseLine.patches.length - 1]}`}</pre>
 
             <p className="mt-2 text-xs text-black/60">
-              Verification uses Git’s built-in signature checks. The public key and fingerprint are published in the reference repository.
+              Verification uses Git’s built-in signature checks. The public key material and fingerprint are published in the core repository.
             </p>
           </div>
         </div>
@@ -328,7 +328,7 @@ git tag -v ${links.releaseLine.patches[links.releaseLine.patches.length - 1]}`}<
             </div>
 
             <div className="mt-4 text-xs text-black/60">
-              This website does not mint releases. It mirrors the cryptographic release line as published in the reference repository.
+              This website does not mint releases. It mirrors the cryptographic release line as published in the core repository.
             </div>
           </div>
         </div>
