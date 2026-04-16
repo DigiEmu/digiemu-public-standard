@@ -21,7 +21,16 @@ const guarantees = [
   { head: "Evidence-based audit surface", body: "Verification MUST produce a report that links the snapshot, referenced inputs, and the computed result (PASS/FAIL)." },
 ] as const;
 
+function formatReleaseTag(tag: string) {
+  if (tag === "spec-v1.0") return "v1";
+  return tag.replace(/^spec-/, "");
+}
+
 export default function SpecPage() {
+  const baselineLabel = formatReleaseTag(links.releaseLine.baseline);
+  const patchLabels = links.releaseLine.patches.map(formatReleaseTag);
+  const latestPatchLabel = patchLabels[patchLabels.length - 1] ?? baselineLabel;
+
   return (
     <>
       <Section id="spec" variant="hero">
@@ -235,22 +244,22 @@ export default function SpecPage() {
         </div>
       </section>
 
-      {/* --- Public Standard Synchronization: v1.0 Release Line (cryptographically anchored) --- */}
+      {/* --- Public Standard Synchronization: v1 Release Line (cryptographically anchored) --- */}
       <section id="release-anchors" className="mt-12 scroll-mt-24">
         <div className={["mx-auto w-full", ui.layout.max, ui.layout.px].join(" ")}>
           <h2 className="text-xl font-semibold tracking-tight text-black">Release Anchors</h2>
           <p className="mt-2 max-w-3xl text-sm text-black/70">
-            The v1.0 release line is defined by a normative baseline tag and a signed patch line.
-            This page mirrors the cryptographic release line as published in the core repository.
+            The v1 release line is defined by a normative baseline tag and a signed patch line.
+            This page mirrors the cryptographic release line as published in the public standard repository.
           </p>
 
           <div className="mt-4 rounded-2xl border border-black/10 bg-white p-5">
             <div className="text-sm font-semibold text-black">Normative baseline</div>
-            <div className="mt-1 font-mono text-sm text-black">{links.releaseLine.baseline}</div>
+            <div className="mt-1 font-mono text-sm text-black">{baselineLabel}</div>
 
             <div className="mt-4 text-sm font-semibold text-black">Signed patch line</div>
             <ul className="mt-2 space-y-1 font-mono text-sm text-black">
-              {links.releaseLine.patches.map((t) => (
+              {patchLabels.map((t) => (
                 <li key={t}>{t}</li>
               ))}
             </ul>
@@ -276,7 +285,7 @@ export default function SpecPage() {
         <div className={["mx-auto w-full", ui.layout.max, ui.layout.px].join(" ")}>
           <h2 className="text-xl font-semibold tracking-tight text-black">Cryptographic Integrity</h2>
           <p className="mt-2 max-w-3xl text-sm text-black/70">
-            All release tags in the v1.0 line are signed. Independent verification is performed with Git tag signature
+            All release tags in the v1 line are signed. Independent verification is performed with Git tag signature
             checks against the published public key material.
           </p>
 
@@ -302,11 +311,11 @@ export default function SpecPage() {
             </div>
 
             <div className="mt-4 text-sm font-semibold text-black">Verify locally</div>
-            <pre className="mt-2 overflow-x-auto rounded-xl border border-black/10 bg-black/5 p-3 text-xs text-black">{`git tag -v ${links.releaseLine.baseline}
-git tag -v ${links.releaseLine.patches[links.releaseLine.patches.length - 1]}`}</pre>
+            <pre className="mt-2 overflow-x-auto rounded-xl border border-black/10 bg-black/5 p-3 text-xs text-black">{`git tag -v ${baselineLabel}
+git tag -v ${latestPatchLabel}`}</pre>
 
             <p className="mt-2 text-xs text-black/60">
-              Verification uses Git’s built-in signature checks. The public key material and fingerprint are published in the core repository.
+              Verification uses Git’s built-in signature checks. The public key material and fingerprint are published in the public standard repository.
             </p>
           </div>
         </div>
@@ -316,7 +325,7 @@ git tag -v ${links.releaseLine.patches[links.releaseLine.patches.length - 1]}`}<
         <div className={["mx-auto w-full", ui.layout.max, ui.layout.px].join(" ")}>
           <h2 className="text-xl font-semibold tracking-tight text-black">Audit Status</h2>
           <p className="mt-2 max-w-3xl text-sm text-black/70">
-            v1.0 is cryptographically anchored and audit-traceable.
+            v1 is cryptographically anchored and audit-traceable.
           </p>
 
           <div className="mt-4 rounded-2xl border border-black/10 bg-white p-5">
@@ -328,7 +337,7 @@ git tag -v ${links.releaseLine.patches[links.releaseLine.patches.length - 1]}`}<
             </div>
 
             <div className="mt-4 text-xs text-black/60">
-              This website does not mint releases. It mirrors the cryptographic release line as published in the core repository.
+              This website does not mint releases. It mirrors the cryptographic release line as published in the public standard repository.
             </div>
           </div>
         </div>
