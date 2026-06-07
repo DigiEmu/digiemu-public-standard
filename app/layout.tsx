@@ -76,7 +76,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "@type": "SoftwareSourceCode",
     name: "DigiEmu Core",
     description: "Deterministic knowledge infrastructure for reproducible verification and governance.",
-    codeRepository: "https://github.com/BrunoBaumgartner78/digiemu-core",
+    codeRepository: "https://github.com/DigiEmu/digiemu-core",
     programmingLanguage: "Go",
     license: "BSL 1.1",
   };
