@@ -1,7 +1,11 @@
 {
-  "schema": "VERIFY_RESULT_SCHEMA_v1",
   "result": "PASS",
+  "artifact_type": "demo_verify_result",
+  "standard": "DigiEmu Core Public Standard",
   "snapshot_ref": "demo_snapshot_v1",
-  "source": "DigiEmu Core public demo placeholder",
-  "note": "Replace with canonical verify result from DigiEmu/core examples when ready."
+  "canonicalization": "canonical_json_v1",
+  "hash_algorithm": "sha256",
+  "computed_hash": "demo_hash_placeholder",
+  "expected_hash": "demo_hash_placeholder",
+  "note": "Public demo verification result served by digiemu.com for reference-page verification."
 }

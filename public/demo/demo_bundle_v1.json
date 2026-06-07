@@ -1,6 +1,17 @@
 {
   "bundle_version": "v1",
+  "artifact_type": "demo_snapshot_bundle",
+  "standard": "DigiEmu Core Public Standard",
   "snapshot_ref": "demo_snapshot_v1",
-  "source": "DigiEmu Core public demo placeholder",
-  "note": "Replace with canonical demo bundle from DigiEmu/core examples when ready."
+  "canonicalization": "canonical_json_v1",
+  "hash_algorithm": "sha256",
+  "inputs": [
+    {
+      "id": "unit.demo.001",
+      "type": "Unit",
+      "version": "v1",
+      "claim": "Demo bundle for deterministic replay validation."
+    }
+  ],
+  "note": "Public demo artifact served by digiemu.com for reference-page verification."
 }
