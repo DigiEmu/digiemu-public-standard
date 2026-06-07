@@ -1,0 +1,6 @@
+{
+  "bundle_version": "v1",
+  "snapshot_ref": "demo_snapshot_v1",
+  "source": "DigiEmu Core public demo placeholder",
+  "note": "Replace with canonical demo bundle from DigiEmu/core examples when ready."
+}

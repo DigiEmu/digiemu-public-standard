@@ -59,7 +59,7 @@ export default function ImprintPage() {
                     GitHub — Core
                   </SmartLink>
                   <SmartLink href={links.githubReference} className="inline-flex items-center rounded-xl border border-black/15 bg-white px-4 py-2 text-sm text-black hover:bg-black/5">
-                    GitHub — Reference
+                    GitHub — Public Standard Site
                   </SmartLink>
                 </div>
               </Card>

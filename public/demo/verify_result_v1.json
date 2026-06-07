@@ -1,0 +1,7 @@
+{
+  "schema": "VERIFY_RESULT_SCHEMA_v1",
+  "result": "PASS",
+  "snapshot_ref": "demo_snapshot_v1",
+  "source": "DigiEmu Core public demo placeholder",
+  "note": "Replace with canonical verify result from DigiEmu/core examples when ready."
+}
