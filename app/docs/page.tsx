@@ -3,7 +3,7 @@ import { links } from "../../src/config/links";
 
 export const metadata = {
   title: "Docs — DigiEmu Core Public Standard",
-  description: "DigiEmu Core 2.0 source documents on GitHub plus legacy v1.0 PDF archive.",
+  description: "DigiEmu Core 2.0 PDF bundle and GitHub source documents, plus legacy v1.0 PDF archive.",
 };
 
 const DocRow = ({
@@ -45,10 +45,48 @@ export default function DocsPage() {
         <div className="mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8 py-16 sm:py-20">
           <h1 className="text-3xl font-semibold tracking-tight text-black sm:text-4xl">Docs</h1>
           <p className="mt-3 max-w-3xl text-sm leading-relaxed text-black/70">
-            Core 2.0 source documents are published on GitHub. Legacy v1.0 PDF documents are archived below.
+            Core 2.0 PDF bundle and GitHub source documents. Legacy v1.0 PDFs are archived below.
           </p>
 
-          <h2 className="mt-10 text-lg font-semibold tracking-tight text-black">Core 2.0 — GitHub source documents</h2>
+          <h2 className="mt-10 text-lg font-semibold tracking-tight text-black">Core 2.0 — PDF Bundle</h2>
+          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-black/70">
+            Stable public copies for review. GitHub remains the source of truth.
+          </p>
+
+          <div className="mt-4 grid gap-4">
+            <DocRow
+              id="v2-specification"
+              title="Core 2.0 Specification"
+              href={links.docsV2.specification}
+              note="Primary Core 2.0 specification document."
+            />
+            <DocRow
+              id="v2-interop-contract"
+              title="Core 2.0 Interop Contract"
+              href={links.docsV2.interopContract}
+              note="Interoperability boundaries and exchange contract."
+            />
+            <DocRow
+              id="v2-verification-framework"
+              title="Core 2.0 Verification Framework"
+              href={links.docsV2.verificationFramework}
+              note="Replay, hash comparison, and evidence report framework."
+            />
+            <DocRow
+              id="v2-governance"
+              title="Core 2.0 Governance"
+              href={links.docsV2.governance}
+              note="Release, traceability, and governance boundaries."
+            />
+            <DocRow
+              id="v2-conformance"
+              title="Core 2.0 Conformance Requirements"
+              href={links.docsV2.conformance}
+              note="Implementation and audit conformance requirements."
+            />
+          </div>
+
+          <h2 className="mt-14 text-lg font-semibold tracking-tight text-black">Core 2.0 — GitHub source documents</h2>
           <p className="mt-2 max-w-3xl text-sm leading-relaxed text-black/70">
             Current normative and reference artifacts for DigiEmu Core 2.0.
           </p>

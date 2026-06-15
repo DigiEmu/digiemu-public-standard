@@ -331,6 +331,50 @@ Result: PASS`}
                 <Pill>Referentially closed inputs</Pill>
               </div>
             </div>
+
+            <div className="mt-10 rounded-3xl border border-black/10 bg-white p-6 shadow-[0_1px_0_rgba(0,0,0,0.04)]">
+              <h2 className="text-base font-semibold text-black">Core 2.0 PDF Bundle</h2>
+              <p className="mt-3 text-sm leading-relaxed text-black/70">
+                Stable public copies for review. GitHub remains the source of truth.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <SmartLink
+                  href={links.docsV2.specification}
+                  external
+                  className="inline-flex items-center rounded-xl border border-black/15 bg-white px-4 py-2 text-sm text-black hover:bg-black/5"
+                >
+                  Specification (PDF)
+                </SmartLink>
+                <SmartLink
+                  href={links.docsV2.verificationFramework}
+                  external
+                  className="inline-flex items-center rounded-xl border border-black/15 bg-white px-4 py-2 text-sm text-black hover:bg-black/5"
+                >
+                  Verification Framework (PDF)
+                </SmartLink>
+                <SmartLink
+                  href={links.docsV2.interopContract}
+                  external
+                  className="inline-flex items-center rounded-xl border border-black/15 bg-white px-4 py-2 text-sm text-black hover:bg-black/5"
+                >
+                  Interop Contract (PDF)
+                </SmartLink>
+                <SmartLink
+                  href={links.docsV2.conformance}
+                  external
+                  className="inline-flex items-center rounded-xl border border-black/15 bg-white px-4 py-2 text-sm text-black hover:bg-black/5"
+                >
+                  Conformance (PDF)
+                </SmartLink>
+                <SmartLink
+                  href={links.docsV2.governance}
+                  external
+                  className="inline-flex items-center rounded-xl border border-black/15 bg-white px-4 py-2 text-sm text-black hover:bg-black/5"
+                >
+                  Governance (PDF)
+                </SmartLink>
+              </div>
+            </div>
           </div>
         </div>
       </Section>

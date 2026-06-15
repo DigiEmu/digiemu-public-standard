@@ -125,44 +125,72 @@ export default function SpecPage() {
 
           <div className={["mt-10", ui.layout.grid3].join(" ")}>
             <Card className={ui.card.pad}>
-              <div className="text-sm font-semibold text-black">Core Specification (PDF — v1.0 archive)</div>
+              <div className="text-sm font-semibold text-black">Core 2.0 Specification (PDF)</div>
               <div className="mt-3">
                 <SmartLink
-                  href={links.docs.specification}
+                  href={links.docsV2.specification}
                   external
                   className="text-sm text-black/70 hover:text-black transition underline underline-offset-4 decoration-black/20"
                 >
-                  Download (PDF)
+                  Open PDF
                 </SmartLink>
               </div>
             </Card>
 
             <Card className={ui.card.pad}>
-              <div className="text-sm font-semibold text-black">Determinism — Formal Definition (PDF — v1.0 archive)</div>
+              <div className="text-sm font-semibold text-black">Core 2.0 Verification Framework (PDF)</div>
               <div className="mt-3">
                 <SmartLink
-                  href={links.docs.determinismFormal}
+                  href={links.docsV2.verificationFramework}
                   external
                   className="text-sm text-black/70 hover:text-black transition underline underline-offset-4 decoration-black/20"
                 >
-                  Download (PDF)
+                  Open PDF
                 </SmartLink>
               </div>
             </Card>
 
             <Card className={ui.card.pad}>
-              <div className="text-sm font-semibold text-black">Conformance Requirements (PDF — v1.0 archive)</div>
+              <div className="text-sm font-semibold text-black">Core 2.0 Interop Contract (PDF)</div>
               <div className="mt-3">
                 <SmartLink
-                  href={links.docs.conformance}
+                  href={links.docsV2.interopContract}
                   external
                   className="text-sm text-black/70 hover:text-black transition underline underline-offset-4 decoration-black/20"
                 >
-                  Download (PDF)
+                  Open PDF
+                </SmartLink>
+              </div>
+            </Card>
+
+            <Card className={ui.card.pad}>
+              <div className="text-sm font-semibold text-black">Core 2.0 Conformance Requirements (PDF)</div>
+              <div className="mt-3">
+                <SmartLink
+                  href={links.docsV2.conformance}
+                  external
+                  className="text-sm text-black/70 hover:text-black transition underline underline-offset-4 decoration-black/20"
+                >
+                  Open PDF
+                </SmartLink>
+              </div>
+            </Card>
+
+            <Card className={ui.card.pad}>
+              <div className="text-sm font-semibold text-black">Core 2.0 Governance (PDF)</div>
+              <div className="mt-3">
+                <SmartLink
+                  href={links.docsV2.governance}
+                  external
+                  className="text-sm text-black/70 hover:text-black transition underline underline-offset-4 decoration-black/20"
+                >
+                  Open PDF
                 </SmartLink>
               </div>
             </Card>
           </div>
+
+          <div className="mt-6 text-xs text-black/50">v1 archive PDFs: <SmartLink href={links.docs.specification} external className="underline underline-offset-4 hover:opacity-80">Specification</SmartLink> · <SmartLink href={links.docs.determinismFormal} external className="underline underline-offset-4 hover:opacity-80">Determinism</SmartLink> · <SmartLink href={links.docs.conformance} external className="underline underline-offset-4 hover:opacity-80">Conformance</SmartLink></div>
 
           <div className="mt-10 rounded-3xl border border-black/10 bg-white p-6">
             <div className="text-sm text-black/50">Source</div>

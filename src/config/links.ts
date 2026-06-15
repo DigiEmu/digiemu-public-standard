@@ -25,6 +25,15 @@ export const links = {
     conformance: "/docs/DigiEmu_Core_Conformance_Requirements_v1_0_ENTERPRISE.pdf",
   },
 
+  // Core 2.0 PDF bundle (public/docs/)
+  docsV2: {
+    specification: "/docs/DigiEmu_Core_2_0_Specification.pdf",
+    interopContract: "/docs/DigiEmu_Core_2_0_Interop_Contract.pdf",
+    verificationFramework: "/docs/DigiEmu_Core_2_0_Verification_Framework.pdf",
+    governance: "/docs/DigiEmu_Core_2_0_Governance.pdf",
+    conformance: "/docs/DigiEmu_Core_2_0_Conformance.pdf",
+  },
+
   demo: {
     bundle: "/demo/demo_bundle_v2.json",
     verifyResult: "/demo/verify_result_v2.json",
