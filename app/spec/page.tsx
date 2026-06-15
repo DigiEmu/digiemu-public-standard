@@ -125,7 +125,7 @@ export default function SpecPage() {
 
           <div className={["mt-10", ui.layout.grid3].join(" ")}>
             <Card className={ui.card.pad}>
-              <div className="text-sm font-semibold text-black">Core 2.0 Specification (PDF)</div>
+              <div className="text-sm font-semibold text-black">Core 2.0 Draft 1 Specification (PDF)</div>
               <div className="mt-3">
                 <SmartLink
                   href={links.docsV2.specification}
@@ -138,7 +138,7 @@ export default function SpecPage() {
             </Card>
 
             <Card className={ui.card.pad}>
-              <div className="text-sm font-semibold text-black">Core 2.0 Verification Framework (PDF)</div>
+              <div className="text-sm font-semibold text-black">Core 2.0 Draft 1 Verification Framework (PDF)</div>
               <div className="mt-3">
                 <SmartLink
                   href={links.docsV2.verificationFramework}
@@ -151,7 +151,7 @@ export default function SpecPage() {
             </Card>
 
             <Card className={ui.card.pad}>
-              <div className="text-sm font-semibold text-black">Core 2.0 Interop Contract (PDF)</div>
+              <div className="text-sm font-semibold text-black">Core 2.0 Draft 1 Interop Contract (PDF)</div>
               <div className="mt-3">
                 <SmartLink
                   href={links.docsV2.interopContract}
@@ -164,10 +164,10 @@ export default function SpecPage() {
             </Card>
 
             <Card className={ui.card.pad}>
-              <div className="text-sm font-semibold text-black">Core 2.0 Conformance Requirements (PDF)</div>
+              <div className="text-sm font-semibold text-black">Core 2.0 Draft 1 Conformance Profile (PDF)</div>
               <div className="mt-3">
                 <SmartLink
-                  href={links.docsV2.conformance}
+                  href={links.docsV2.conformanceProfile}
                   external
                   className="text-sm text-black/70 hover:text-black transition underline underline-offset-4 decoration-black/20"
                 >
@@ -177,10 +177,10 @@ export default function SpecPage() {
             </Card>
 
             <Card className={ui.card.pad}>
-              <div className="text-sm font-semibold text-black">Core 2.0 Governance (PDF)</div>
+              <div className="text-sm font-semibold text-black">Core 2.0 Draft 1 Governance Notes (PDF)</div>
               <div className="mt-3">
                 <SmartLink
-                  href={links.docsV2.governance}
+                  href={links.docsV2.governanceNotes}
                   external
                   className="text-sm text-black/70 hover:text-black transition underline underline-offset-4 decoration-black/20"
                 >

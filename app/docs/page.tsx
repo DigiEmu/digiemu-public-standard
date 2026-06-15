@@ -48,7 +48,7 @@ export default function DocsPage() {
             Core 2.0 PDF bundle and GitHub source documents. Legacy v1.0 PDFs are archived below.
           </p>
 
-          <h2 className="mt-10 text-lg font-semibold tracking-tight text-black">Core 2.0 — PDF Bundle</h2>
+          <h2 className="mt-10 text-lg font-semibold tracking-tight text-black">Core 2.0 Draft 1 — PDF Bundle</h2>
           <p className="mt-2 max-w-3xl text-sm leading-relaxed text-black/70">
             Stable public copies for review. GitHub remains the source of truth.
           </p>
@@ -56,32 +56,32 @@ export default function DocsPage() {
           <div className="mt-4 grid gap-4">
             <DocRow
               id="v2-specification"
-              title="Core 2.0 Specification"
+              title="DigiEmu Core 2.0 — Draft 1 Specification"
               href={links.docsV2.specification}
               note="Primary Core 2.0 specification document."
             />
             <DocRow
               id="v2-interop-contract"
-              title="Core 2.0 Interop Contract"
+              title="Core 2.0 — Draft 1 Interop Contract"
               href={links.docsV2.interopContract}
               note="Interoperability boundaries and exchange contract."
             />
             <DocRow
               id="v2-verification-framework"
-              title="Core 2.0 Verification Framework"
+              title="Core 2.0 — Draft 1 Verification Framework"
               href={links.docsV2.verificationFramework}
               note="Replay, hash comparison, and evidence report framework."
             />
             <DocRow
               id="v2-governance"
-              title="Core 2.0 Governance"
-              href={links.docsV2.governance}
+              title="Core 2.0 — Draft 1 Governance Notes"
+              href={links.docsV2.governanceNotes}
               note="Release, traceability, and governance boundaries."
             />
             <DocRow
               id="v2-conformance"
-              title="Core 2.0 Conformance Requirements"
-              href={links.docsV2.conformance}
+              title="Core 2.0 — Draft 1 Conformance Profile"
+              href={links.docsV2.conformanceProfile}
               note="Implementation and audit conformance requirements."
             />
           </div>
