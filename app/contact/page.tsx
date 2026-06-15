@@ -62,7 +62,7 @@ export default function ContactPage() {
                 external
                 className="inline-flex items-center rounded-xl border border-black/15 bg-white px-4 py-2 text-sm text-black hover:bg-black/5"
               >
-                Reference repo
+                Public Standard Site
               </SmartLink>
 
               <SmartLink

@@ -21,15 +21,15 @@ const guarantees = [
   { head: "Evidence-based audit surface", body: "Verification MUST produce a report that links the snapshot, referenced inputs, and the computed result (PASS/FAIL)." },
 ] as const;
 
-function formatReleaseTag(tag: string) {
+function formatLegacyTag(tag: string) {
   if (tag === "spec-v1.0") return "v1";
   return tag.replace(/^spec-/, "");
 }
 
 export default function SpecPage() {
-  const baselineLabel = formatReleaseTag(links.releaseLine.baseline);
-  const patchLabels = links.releaseLine.patches.map(formatReleaseTag);
-  const latestPatchLabel = patchLabels[patchLabels.length - 1] ?? baselineLabel;
+  const legacyBaselineLabel = formatLegacyTag(links.legacy.releaseLine.baseline);
+  const legacyPatchLabels = links.legacy.releaseLine.patches.map(formatLegacyTag);
+  const legacyLatestPatchLabel = legacyPatchLabels[legacyPatchLabels.length - 1] ?? legacyBaselineLabel;
 
   return (
     <>
@@ -107,8 +107,11 @@ export default function SpecPage() {
           </Card>
 
           <Card className={[ui.card.pad, "mt-4"].join(" ")}>
-            <div className="text-sm text-black/50">CLI Contract v1</div>
-            <div className="mt-3 text-xs text-black/70">Not published — illustrative only.</div>
+            <div className="text-sm text-black/50">CLI Contract v1 (baseline — locked)</div>
+            <div className="mt-3 text-xs text-black/70">
+              The v1 CLI contract is locked and documented in the Core repository.{" "}
+              <SmartLink href={links.artifacts.cliContract} external className="underline underline-offset-4 hover:opacity-80">CLI_CONTRACT_v1.0.md</SmartLink>
+            </div>
           </Card>
         </div>
       </Section>
@@ -122,7 +125,7 @@ export default function SpecPage() {
 
           <div className={["mt-10", ui.layout.grid3].join(" ")}>
             <Card className={ui.card.pad}>
-              <div className="text-sm font-semibold text-black">Core Specification v1.0</div>
+              <div className="text-sm font-semibold text-black">Core Specification (PDF — v1.0 archive)</div>
               <div className="mt-3">
                 <SmartLink
                   href={links.docs.specification}
@@ -135,7 +138,7 @@ export default function SpecPage() {
             </Card>
 
             <Card className={ui.card.pad}>
-              <div className="text-sm font-semibold text-black">Determinism — Formal Definition v1.0</div>
+              <div className="text-sm font-semibold text-black">Determinism — Formal Definition (PDF — v1.0 archive)</div>
               <div className="mt-3">
                 <SmartLink
                   href={links.docs.determinismFormal}
@@ -148,7 +151,7 @@ export default function SpecPage() {
             </Card>
 
             <Card className={ui.card.pad}>
-              <div className="text-sm font-semibold text-black">Conformance Requirements v1.0</div>
+              <div className="text-sm font-semibold text-black">Conformance Requirements (PDF — v1.0 archive)</div>
               <div className="mt-3">
                 <SmartLink
                   href={links.docs.conformance}
@@ -208,7 +211,7 @@ export default function SpecPage() {
                   className="rounded-2xl border border-black/10 bg-white p-4 text-sm text-black hover:bg-black/5"
                 >
                   <div className="font-semibold">Specification v1.0</div>
-                  <div className="mt-1 text-xs text-black/50">Download PDF</div>
+                  <div className="mt-1 text-xs text-black/50">Download PDF (legacy archive)</div>
                 </a>
 
                 <a
@@ -216,7 +219,7 @@ export default function SpecPage() {
                   className="rounded-2xl border border-black/10 bg-white p-4 text-sm text-black hover:bg-black/5"
                 >
                   <div className="font-semibold">Determinism (Formal) v1.0</div>
-                  <div className="mt-1 text-xs text-black/50">Download PDF</div>
+                  <div className="mt-1 text-xs text-black/50">Download PDF (legacy archive)</div>
                 </a>
 
                 <a
@@ -224,7 +227,7 @@ export default function SpecPage() {
                   className="rounded-2xl border border-black/10 bg-white p-4 text-sm text-black hover:bg-black/5"
                 >
                   <div className="font-semibold">Conformance Requirements v1.0</div>
-                  <div className="mt-1 text-xs text-black/50">Download PDF</div>
+                  <div className="mt-1 text-xs text-black/50">Download PDF (legacy archive)</div>
                 </a>
 
                 <a
@@ -232,7 +235,7 @@ export default function SpecPage() {
                   className="rounded-2xl border border-black/10 bg-white p-4 text-sm text-black hover:bg-black/5"
                 >
                   <div className="font-semibold">Certification Requirements v1.0</div>
-                  <div className="mt-1 text-xs text-black/50">Download PDF</div>
+                  <div className="mt-1 text-xs text-black/50">Download PDF (legacy archive)</div>
                 </a>
               </div>
 
@@ -244,31 +247,30 @@ export default function SpecPage() {
         </div>
       </section>
 
-      {/* --- Public Standard Synchronization: v1 Release Line (cryptographically anchored) --- */}
+      {/* --- Public Standard Synchronization: Core 2.0 Release Anchor --- */}
       <section id="release-anchors" className="mt-12 scroll-mt-24">
         <div className={["mx-auto w-full", ui.layout.max, ui.layout.px].join(" ")}>
           <h2 className="text-xl font-semibold tracking-tight text-black">Release Anchors</h2>
           <p className="mt-2 max-w-3xl text-sm text-black/70">
-            The v1 release line is defined by a normative baseline tag and a signed patch line.
-            This page mirrors the cryptographic release line as published in the public standard repository.
+            The current release is DigiEmu Core 2.0 (tag: <code>core-2.0.0</code>).
+            This page mirrors the cryptographic release line as published in the DigiEmu Core repository.
           </p>
 
           <div className="mt-4 rounded-2xl border border-black/10 bg-white p-5">
-            <div className="text-sm font-semibold text-black">Normative baseline</div>
-            <div className="mt-1 font-mono text-sm text-black">{baselineLabel}</div>
-
-            <div className="mt-4 text-sm font-semibold text-black">Signed patch line</div>
-            <ul className="mt-2 space-y-1 font-mono text-sm text-black">
-              {patchLabels.map((t) => (
-                <li key={t}>{t}</li>
-              ))}
-            </ul>
+            <div className="text-sm font-semibold text-black">Current release</div>
+            <div className="mt-1 font-mono text-sm text-black">{links.core2.tag}</div>
+            <div className="mt-1 text-xs text-black/60">{links.core2.label}</div>
 
             <div className="mt-4 text-sm font-semibold text-black">GitHub</div>
             <ul className="mt-2 space-y-1 text-sm">
               <li>
+                <a className="underline underline-offset-4 hover:opacity-80" href={links.core2.release}>
+                  Release: {links.core2.tag}
+                </a>
+              </li>
+              <li>
                 <a className="underline underline-offset-4 hover:opacity-80" href={links.coreReference.releases}>
-                  Releases
+                  All releases
                 </a>
               </li>
               <li>
@@ -278,6 +280,22 @@ export default function SpecPage() {
               </li>
             </ul>
           </div>
+
+          <div className="mt-4 rounded-2xl border border-black/10 bg-white p-5">
+            <div className="text-sm font-semibold text-black">Legacy archive — v1 release line</div>
+            <p className="mt-1 text-xs text-black/60">
+              The v1 baseline and signed patch line remain available as a legacy archive.
+            </p>
+            <div className="mt-3 text-sm font-semibold text-black">Normative baseline</div>
+            <div className="mt-1 font-mono text-sm text-black">{legacyBaselineLabel}</div>
+
+            <div className="mt-4 text-sm font-semibold text-black">Signed patch line</div>
+            <ul className="mt-2 space-y-1 font-mono text-sm text-black">
+              {legacyPatchLabels.map((t) => (
+                <li key={t}>{t}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -285,7 +303,7 @@ export default function SpecPage() {
         <div className={["mx-auto w-full", ui.layout.max, ui.layout.px].join(" ")}>
           <h2 className="text-xl font-semibold tracking-tight text-black">Cryptographic Integrity</h2>
           <p className="mt-2 max-w-3xl text-sm text-black/70">
-            All release tags in the v1 line are signed. Independent verification is performed with Git tag signature
+            Release tags are signed. Independent verification is performed with Git tag signature
             checks against the published public key material.
           </p>
 
@@ -311,8 +329,7 @@ export default function SpecPage() {
             </div>
 
             <div className="mt-4 text-sm font-semibold text-black">Verify locally</div>
-            <pre className="mt-2 overflow-x-auto rounded-xl border border-black/10 bg-black/5 p-3 text-xs text-black">{`git tag -v ${baselineLabel}
-git tag -v ${latestPatchLabel}`}</pre>
+            <pre className="mt-2 overflow-x-auto rounded-xl border border-black/10 bg-black/5 p-3 text-xs text-black">{`git tag -v ${links.core2.tag}\n# Legacy v1 archive:\ngit tag -v ${legacyBaselineLabel}\ngit tag -v ${legacyLatestPatchLabel}`}</pre>
 
             <p className="mt-2 text-xs text-black/60">
               Verification uses Git’s built-in signature checks. The public key material and fingerprint are published in the public standard repository.
@@ -325,19 +342,26 @@ git tag -v ${latestPatchLabel}`}</pre>
         <div className={["mx-auto w-full", ui.layout.max, ui.layout.px].join(" ")}>
           <h2 className="text-xl font-semibold tracking-tight text-black">Audit Status</h2>
           <p className="mt-2 max-w-3xl text-sm text-black/70">
-            v1 is cryptographically anchored and audit-traceable.
+            Core 2.0 (<code>core-2.0.0</code>) is the current release. It is cryptographically anchored and audit-traceable.
           </p>
 
           <div className="mt-4 rounded-2xl border border-black/10 bg-white p-5">
             <div className="text-sm font-semibold text-black">Audit statement</div>
             <div className="mt-2 text-sm">
               <a className="underline underline-offset-4 hover:opacity-80" href={links.coreReference.auditStatement}>
-                AUDIT_STATEMENT_v1.0.md
+                CORE_SECURITY_AUDIT_2026-04-05.md
+              </a>
+            </div>
+
+            <div className="mt-4 text-sm font-semibold text-black">Core 2.0 — interop contract</div>
+            <div className="mt-2 text-sm">
+              <a className="underline underline-offset-4 hover:opacity-80" href={links.core2.interopContract}>
+                CORE_2_INTEROP_CONTRACT.md
               </a>
             </div>
 
             <div className="mt-4 text-xs text-black/60">
-              This website does not mint releases. It mirrors the cryptographic release line as published in the public standard repository.
+              This website does not mint releases. It mirrors the cryptographic release line as published in the DigiEmu Core repository.
             </div>
           </div>
         </div>

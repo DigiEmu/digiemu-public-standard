@@ -256,7 +256,7 @@ Result: PASS`}
 
                 <div className="mt-3">
                   <SmartLink
-                    href={links.cliContractV1Tag}
+                    href={links.legacy.cliContractV1Tag}
                     external
                     className="inline-flex items-center rounded-xl border border-black/15 bg-white px-3 py-1 text-sm text-black hover:bg-black/5"
                   >

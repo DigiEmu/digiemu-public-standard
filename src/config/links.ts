@@ -26,14 +26,25 @@ export const links = {
   },
 
   demo: {
-    bundle: "/demo/demo_bundle_v1.json",
-    verifyResult: "/demo/verify_result_v1.json",
+    bundle: "/demo/demo_bundle_v2.json",
+    verifyResult: "/demo/verify_result_v2.json",
   },
 
   artifacts: {
     testStrategy: "https://github.com/DigiEmu/core/tree/main/docs",
     verifyAuditSpec: "https://github.com/DigiEmu/core/blob/main/docs/CORE_SECURITY_AUDIT_2026-04-05.md",
     decLog: "https://github.com/DigiEmu/core/tree/main/01_decisions",
+    specIndex: "https://github.com/DigiEmu/core/blob/main/docs/SPEC_INDEX_v1.0.md",
+    cliContract: "https://github.com/DigiEmu/core/blob/main/docs/CLI_CONTRACT_v1.0.md",
+    snapshotHash: "https://github.com/DigiEmu/core/blob/main/docs/SNAPSHOT_HASH_v1.0.md",
+    verifySpec: "https://github.com/DigiEmu/core/blob/main/docs/VERIFY_SPEC_v1.0.md",
+    snapshotBundle: "https://github.com/DigiEmu/core/blob/main/docs/SNAPSHOT_BUNDLE_v1.0.md",
+    interopContract: "https://github.com/DigiEmu/core/blob/main/docs/CORE_2_INTEROP_CONTRACT.md",
+    externalReviewNote: "https://github.com/DigiEmu/core/blob/main/docs/CORE_2_EXTERNAL_REVIEW_NOTE.md",
+    conformanceQuickstart: "https://github.com/DigiEmu/core/blob/main/docs/CORE_2_CONFORMANCE_QUICKSTART.md",
+    interopExamples: "https://github.com/DigiEmu/core/blob/main/examples/interop/README.md",
+    securityPolicy: "https://github.com/DigiEmu/core/blob/main/SECURITY.md",
+    determinismExceptions: "https://github.com/DigiEmu/core/blob/main/docs/security/DETERMINISM_EXCEPTIONS.md",
   },
 
   coreReference: {
@@ -47,21 +58,35 @@ export const links = {
     fingerprint: "DCB7 228C 6EC8 BE4A CB9E 049D 0F75 05E1 2685 E8A2",
   },
 
-  // real technical tags
-  releaseLine: {
-    baseline: "spec-v1.0",
-    patches: ["spec-v1.0.1", "spec-v1.0.2", "spec-v1.0.3"],
+  // Core 2.0 release (current stable)
+  core2: {
+    tag: "core-2.0.0",
+    label: "Core 2.0",
+    release: "https://github.com/DigiEmu/core/releases/tag/core-2.0.0",
+    tree: "https://github.com/DigiEmu/core/tree/core-2.0.0",
+    verifySchema: "https://github.com/DigiEmu/core/blob/main/docs/VERIFY_RESULT_SCHEMA_v1.json",
+    snapshotBundleSpec: "https://github.com/DigiEmu/core/blob/main/docs/SNAPSHOT_BUNDLE_v1.0.md",
+    versioningPolicy: "https://github.com/DigiEmu/core/blob/main/docs/SPEC_INDEX_v1.0.md",
+    interopContract: "https://github.com/DigiEmu/core/blob/main/docs/CORE_2_INTEROP_CONTRACT.md",
+    conformanceQuickstart: "https://github.com/DigiEmu/core/blob/main/docs/CORE_2_CONFORMANCE_QUICKSTART.md",
   },
 
-  // human-facing labels
-  releaseLabels: {
-    baseline: "v1",
-    patches: ["v1.0.1", "v1.0.2", "v1.0.3"],
+  // --- Legacy / Archive: v1 release line ---
+  legacy: {
+    releaseLine: {
+      baseline: "spec-v1.0",
+      patches: ["spec-v1.0.1", "spec-v1.0.2", "spec-v1.0.3"],
+    },
+    releaseLabels: {
+      baseline: "v1",
+      patches: ["v1.0.1", "v1.0.2", "v1.0.3"],
+    },
+    specV1: "https://github.com/DigiEmu/core/tree/cli-contract-v1.0.0/docs",
+    cliContractV1Tag: "https://github.com/DigiEmu/core/releases/tag/cli-contract-v1.0.0",
+    verifySchema: "https://github.com/DigiEmu/core/blob/cli-contract-v1.0.0/docs/VERIFY_RESULT_SCHEMA_v1.json",
+    snapshotBundleSpec: "https://github.com/DigiEmu/core/blob/cli-contract-v1.0.0/docs/SNAPSHOT_BUNDLE_v1.0.md",
+    versioningPolicy: "https://github.com/DigiEmu/core/blob/cli-contract-v1.0.0/docs/VERSIONING_POLICY_v1.0.md",
+    bundle: "/demo/demo_bundle_v1.json",
+    verifyResult: "/demo/verify_result_v1.json",
   },
-
-  specV1: "https://github.com/DigiEmu/core/tree/cli-contract-v1.0.0/docs",
-  cliContractV1Tag: "https://github.com/DigiEmu/core/releases/tag/cli-contract-v1.0.0",
-  verifySchema: "https://github.com/DigiEmu/core/blob/cli-contract-v1.0.0/docs/VERIFY_RESULT_SCHEMA_v1.json",
-  snapshotBundleSpec: "https://github.com/DigiEmu/core/blob/cli-contract-v1.0.0/docs/SNAPSHOT_BUNDLE_v1.0.md",
-  versioningPolicy: "https://github.com/DigiEmu/core/blob/cli-contract-v1.0.0/docs/VERSIONING_POLICY_v1.0.md",
 } as const;
