@@ -59,3 +59,13 @@ Install dependencies:
 
 ```bash
 npm ci
+```
+
+## Environment variables
+
+The site uses `NEXT_PUBLIC_SITE_URL` to build absolute OpenGraph/Twitter image URLs.
+
+- **Production:** `NEXT_PUBLIC_SITE_URL=https://digiemu.com`
+- **Local preview:** `NEXT_PUBLIC_SITE_URL=http://localhost:3000`
+
+If the variable is not set, the metadata falls back to `https://digiemu.com`.

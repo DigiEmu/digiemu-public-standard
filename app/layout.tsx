@@ -18,7 +18,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://digiemu.com";
+const ogImage = new URL("/og-core.png", siteUrl).toString();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -46,17 +47,17 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
   openGraph: {
     type: "website",
-    url: "/",
+    url: siteUrl,
     siteName: "DigiEmu Core",
     title: "DigiEmu Core — Deterministic Knowledge Infrastructure",
     description: "Snapshot-verifiable state reconstruction and deterministic replay for audit and governance.",
-    images: [{ url: "/og-core.png", width: 1200, height: 630 }],
+    images: [{ url: ogImage, width: 1200, height: 630, alt: "DigiEmu Core — Deterministic Knowledge Infrastructure" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "DigiEmu Core",
     description: "Deterministic knowledge infrastructure for reproducible verification.",
-    images: ["/og-core.png"],
+    images: [ogImage],
   },
 };
 
